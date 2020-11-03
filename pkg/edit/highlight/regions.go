@@ -54,6 +54,10 @@ const (
 	// A region when a string literal (bareword, single-quoted or double-quoted)
 	// appears as a command.
 	commandRegion = "command"
+	// A region for malformed commands
+	badCommandRegion = "bad command"
+	// A region for correctly formatted commands
+	goodCommandRegion = "good command"
 	// A region for keywords in special forms, like "else" in an "if" form.
 	keywordRegion = "keyword"
 	// A region of parse or compilation error.

@@ -29,9 +29,6 @@ var stylingFor = map[string]ui.Styling{
 	commandRegion: ui.FgGreen,
 	keywordRegion: ui.FgYellow,
 	errorRegion:   ui.Stylings(ui.FgBrightWhite, ui.BgRed),
+	goodCommandRegion: ui.FgGreen,
+	badCommandRegion: ui.FgRed,
 }
-
-var (
-	stylingForGoodCommand = ui.FgGreen
-	stylingForBadCommand  = ui.FgRed
-)

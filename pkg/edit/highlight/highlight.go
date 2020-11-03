@@ -76,7 +76,7 @@ func highlight(code string, cfg Config, lateCb func(ui.Text)) (ui.Text, []error)
 				cmdRegions = append(cmdRegions, cmdRegion{len(text), regionCode})
 			} else {
 				// Treat all commands as good commands.
-				styling = stylingForGoodCommand
+				styling = stylingFor["good command"]
 			}
 		} else {
 			styling = stylingFor[r.typ]
@@ -102,9 +102,9 @@ func highlight(code string, cfg Config, lateCb func(ui.Text)) (ui.Text, []error)
 			for _, cmdRegion := range cmdRegions {
 				var styling ui.Styling
 				if cfg.HasCommand(cmdRegion.cmd) {
-					styling = stylingForGoodCommand
+					styling = stylingFor["good command"]
 				} else {
-					styling = stylingForBadCommand
+					styling = stylingFor["bad command"]
 				}
 				seg := &newText[cmdRegion.seg]
 				*seg = ui.StyleSegment(*seg, styling)
